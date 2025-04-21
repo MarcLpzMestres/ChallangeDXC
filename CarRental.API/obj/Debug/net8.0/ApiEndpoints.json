@@ -1,0 +1,101 @@
+[
+  {
+    "ContainingType": "CarRental.API.Controllers.CarRentalController",
+    "Method": "GetAll",
+    "RelativePath": "api/CarRental/cars/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CarRental.API.Controllers.CarRentalController",
+    "Method": "AddCar",
+    "RelativePath": "api/CarRental/cars/insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CarRental.Application.DTOs.CreateCarRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CarRental.API.Controllers.CarRentalController",
+    "Method": "GetLoyaltyPoints",
+    "RelativePath": "api/CarRental/clients/{id}/loyalty",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CarRental.API.Controllers.CarRentalController",
+    "Method": "GetClients",
+    "RelativePath": "api/CarRental/clients/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CarRental.API.Controllers.CarRentalController",
+    "Method": "RentCars",
+    "RelativePath": "api/CarRental/rent/rent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CarRental.Application.DTOs.RentCarsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CarRental.Application.DTOs.RentCarsResult",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CarRental.API.Controllers.CarRentalController",
+    "Method": "ReturnCar",
+    "RelativePath": "api/CarRental/rent/return",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "extraDays",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

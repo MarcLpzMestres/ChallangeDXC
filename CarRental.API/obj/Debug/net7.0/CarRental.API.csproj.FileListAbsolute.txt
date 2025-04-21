@@ -1,0 +1,6 @@
+C:\Users\Marc\Desktop\test prueba solution\CarRental.API\obj\Debug\net7.0\CarRental.API.csproj.AssemblyReference.cache
+C:\Users\Marc\Desktop\test prueba solution\CarRental.API\obj\Debug\net7.0\CarRental.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marc\Desktop\test prueba solution\CarRental.API\obj\Debug\net7.0\CarRental.API.AssemblyInfoInputs.cache
+C:\Users\Marc\Desktop\test prueba solution\CarRental.API\obj\Debug\net7.0\CarRental.API.AssemblyInfo.cs
+C:\Users\Marc\Desktop\test prueba solution\CarRental.API\obj\Debug\net7.0\CarRental.API.csproj.CoreCompileInputs.cache
+C:\Users\Marc\Desktop\test prueba solution\CarRental.API\obj\Debug\net7.0\CarRental.API.MvcApplicationPartsAssemblyInfo.cache

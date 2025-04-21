@@ -1,0 +1,239 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "CarRental.API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/CarRental/rent/rent": {
+      "post": {
+        "tags": [
+          "CarRental"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RentCarsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RentCarsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RentCarsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RentCarsResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RentCarsResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RentCarsResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CarRental/rent/return": {
+      "post": {
+        "tags": [
+          "CarRental"
+        ],
+        "parameters": [
+          {
+            "name": "carId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "extraDays",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CarRental/cars/insert": {
+      "post": {
+        "tags": [
+          "CarRental"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCarRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCarRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCarRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CarRental/cars/getAll": {
+      "get": {
+        "tags": [
+          "CarRental"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CarRental/clients/{id}/loyalty": {
+      "get": {
+        "tags": [
+          "CarRental"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CarRental/clients/getAll": {
+      "get": {
+        "tags": [
+          "CarRental"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CarType": {
+        "enum": [
+          "Premium",
+          "SUV",
+          "Small"
+        ],
+        "type": "string"
+      },
+      "CreateCarRequest": {
+        "type": "object",
+        "properties": {
+          "brand": {
+            "type": "string",
+            "nullable": true
+          },
+          "model": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/CarType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RentCarItem": {
+        "type": "object",
+        "properties": {
+          "carId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "days": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RentCarsRequest": {
+        "type": "object",
+        "properties": {
+          "customerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "carsToRent": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RentCarItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RentCarsResult": {
+        "type": "object",
+        "properties": {
+          "totalPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalLoyaltyPoints": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
